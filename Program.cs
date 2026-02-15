@@ -103,7 +103,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("https://bskwater.vercel.app")
+        policy.WithOrigins("https://bskwater.netlify.app")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
