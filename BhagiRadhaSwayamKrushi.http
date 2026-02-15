@@ -1,0 +1,6 @@
+@BhagiRadhaSwayamKrushi_HostAddress = http://localhost:5150
+
+GET {{BhagiRadhaSwayamKrushi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
