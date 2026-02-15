@@ -2,9 +2,11 @@
 using BhagiRadhaSwayamKrushi.Data;
 using BhagiRadhaSwayamKrushi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BhagiRadhaSwayamKrushi.Controllers
 {
+   
     [ApiController]
     [Route("api/[controller]")]
     public class LocationController : ControllerBase
