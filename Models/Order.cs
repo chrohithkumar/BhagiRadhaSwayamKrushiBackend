@@ -30,7 +30,7 @@ namespace BhagiRadhaSwayamKrushi.Models
         // ----------------------
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public OrderStatus Status { get; set; } = "Pending";
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
     }
 }
 
