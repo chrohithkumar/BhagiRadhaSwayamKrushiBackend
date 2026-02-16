@@ -13,5 +13,7 @@
         public int CoolQty { get; set; }
 
         public decimal TotalAmount { get; set; }
+        public string BookingType { get; set; } // "daily" or "advance"
+        public DateTime? BookingDate { get; set; } //
     }
 }

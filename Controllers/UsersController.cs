@@ -2,9 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using BhagiRadhaSwayamKrushi.Data;
 using BhagiRadhaSwayamKrushi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BhagiRadhaSwayamKrushi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase

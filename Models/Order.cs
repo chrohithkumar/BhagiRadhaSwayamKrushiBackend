@@ -14,7 +14,6 @@ namespace BhagiRadhaSwayamKrushi.Models
 
         public string Address { get; set; }
 
-        // Nullable latitude and longitude
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
 
@@ -22,6 +21,13 @@ namespace BhagiRadhaSwayamKrushi.Models
         public int CoolQty { get; set; }
 
         public decimal TotalAmount { get; set; }
+
+        // --- UPDATED FIELDS ---
+        [Required]
+        public string BookingType { get; set; } = "daily"; // values: "daily", "advance"
+
+        public DateTime BookingDate { get; set; } // The date for delivery
+        // ----------------------
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
