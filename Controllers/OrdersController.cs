@@ -63,7 +63,7 @@ namespace BhagiRadhaSwayamKrushi.Controllers
                               order.TotalAmount,
                               order.BookingType, // Send this for frontend filter
                               order.BookingDate, // Send this for delivery info
-                              order.Status,
+                              Status = order.Status.ToString(),
                               order.CreatedAt,
                               UserActiveStatus = subUser != null ? subUser.ActiveStatus : "Unknown"
                           })
