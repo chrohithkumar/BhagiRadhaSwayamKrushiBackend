@@ -58,6 +58,9 @@ namespace BhagiRadhaSwayamKrushi.Controllers
                               order.Id,
                               order.Name,
                               order.MobileNumber,
+                              order.NormalQty,
+                              order.CoolQty,
+                              order.TotalAmount,
                               order.BookingType, // Send this for frontend filter
                               order.BookingDate, // Send this for delivery info
                               order.Status,
