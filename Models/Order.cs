@@ -26,7 +26,8 @@ namespace BhagiRadhaSwayamKrushi.Models
         [Required]
         public string BookingType { get; set; } = "daily"; // values: "daily", "advance"
 
-        public DateTime BookingDate { get; set; } // The date for delivery
+        public DateOnly BookingDate { get; set; }
+        // The date for delivery
         // ----------------------
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

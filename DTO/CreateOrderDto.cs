@@ -14,6 +14,7 @@
 
         public decimal TotalAmount { get; set; }
         public string BookingType { get; set; } // "daily" or "advance"
-        public DateTime? BookingDate { get; set; } //
+        public DateOnly? BookingDate { get; set; }
+        //
     }
 }

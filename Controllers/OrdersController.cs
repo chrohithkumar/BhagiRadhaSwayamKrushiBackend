@@ -34,11 +34,11 @@ namespace BhagiRadhaSwayamKrushi.Controllers
                 TotalAmount = dto.TotalAmount,
                 Status = OrderStatus.Pending,
 
-                // Logic: if advance, use user's date. If daily, use now.
-                BookingType = dto.BookingType ?? "daily",
                 BookingDate = (dto.BookingType == "advance" && dto.BookingDate.HasValue)
-                              ? dto.BookingDate.Value
-                              : DateTime.UtcNow
+              ? dto.BookingDate.Value
+              : DateOnly.FromDateTime(DateTime.UtcNow)
+
+
             };
 
             _context.Orders.Add(order);
