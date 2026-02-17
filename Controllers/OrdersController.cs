@@ -18,10 +18,12 @@ namespace BhagiRadhaSwayamKrushi.Controllers
             _context = context;
         }
 
-        // POST api/orders/addOrder
         [HttpPost("addOrder")]
         public async Task<IActionResult> CreateOrder(CreateOrderDto dto)
         {
+            // Normalize booking type safely
+            var bookingType = dto.BookingType?.Trim().ToLower();
+
             var order = new Order
             {
                 Name = dto.Name,
@@ -34,17 +36,21 @@ namespace BhagiRadhaSwayamKrushi.Controllers
                 TotalAmount = dto.TotalAmount,
                 Status = OrderStatus.Pending,
 
-                BookingDate = (dto.BookingType == "advance" && dto.BookingDate.HasValue)
-              ? dto.BookingDate.Value
-              : DateOnly.FromDateTime(DateTime.UtcNow)
+                // Assign BookingType based on frontend input (default to "daily")
+                BookingType = bookingType == "advance" ? "advance" : "daily",
 
-
+                // Assign BookingDate based on BookingType
+                BookingDate = bookingType == "advance" && dto.BookingDate.HasValue
+                    ? dto.BookingDate.Value
+                    : DateOnly.FromDateTime(DateTime.UtcNow)
             };
 
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
+
             return Ok(new { message = "Order placed", orderId = order.Id });
         }
+
 
         // GET api/orders
         [HttpGet]
