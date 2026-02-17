@@ -9,6 +9,10 @@
     public decimal TotalAmount { get; set; }
     public DateTime CreatedAt { get; set; }
     public string Status { get; set; }
-    // The new field you need:
+
+    // ✅ Add these two
+    public string BookingType { get; set; }
+    public DateOnly? BookingDate { get; set; }
+
     public string UserActiveStatus { get; set; }
 }
