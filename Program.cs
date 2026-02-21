@@ -101,12 +101,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // 🔹 CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.WithOrigins("https://bskwater.vercel.app", "http://localhost:5173")
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
+   
+        options.AddPolicy("AllowFrontend", policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+   
 });
 
 // 🔹 JWT
